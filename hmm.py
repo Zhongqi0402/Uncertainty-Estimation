@@ -1,11 +1,3 @@
-# -*- coding: utf-8 -*-
-#
-# Copyright 2023 University of Waterloo
-# Author Y. Y. 
-#
-# This file is part of course material for CS458/658.
-
-
 import numpy as np
 from env import *
 from typing import List, Tuple

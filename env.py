@@ -1,5 +1,3 @@
-# version 1.0
-
 import numpy as np
 import matplotlib.pyplot as plt
 from typing import List, Dict
@@ -104,8 +102,7 @@ class Environment:
         return self.observation_matrices.T[observation]
 
     # ==========================================================================
-    # You do not need the functions below for the assignment.
-    # However, you might find them helpful for simulating the robot environment.
+    # helpful for simulating an example robot environment
     # ==========================================================================
 
     def observe(self) -> int:
@@ -224,48 +221,3 @@ def visualize_belief(env: Environment, probs: Dict, k=None):
     plt.tight_layout()
     plt.show()
 
-
-# class PMF:
-#     '''
-#     A class representing a normalized probability mass function over a discrete random variable.
-#     '''
-
-#     def __init__(self, domain: List, probabilities: List[float]):
-#         '''
-#         :param domain: A list of values for the random variable
-#         :param probabilities: A list of probabilities corresponding to each value of the random variable
-#         '''
-
-#         assert (len(domain) == len(probabilities)), "Number of variables in domain must match number of probabilities"
-#         self.domain = np.array(domain)
-#         self.n_vars = len(domain)
-#         self.probabilities = np.array(probabilities, dtype=float)
-
-#         # normalize the probabilities
-#         self.probabilities /= np.sum(self.probabilities)
-
-
-#     def sample(self):
-#         '''
-#         Sample a value of the random variable from its probability distribution
-#         :return: The sampled value of the random variable
-#         '''
-#         return np.random.choice(self.domain, p=self.probabilities)
-
-#     def normalize(self):
-#         '''
-#         Normalize the probability distribution
-#         '''
-#         self.probabilities /= np.sum(self.probabilities)
-
-#     def __getitem__(self, value):
-#         '''
-#         Return the probability associated with a particular value of the random variable.
-#         Can also be accessed using PMF[value]
-#         :param value: A value of the random variable (must exist in self.domain)
-#         :return: The probability associated with that value
-#         '''
-#         if value in self.domain:
-#             return self.probabilities[self.domain.tolist().index(value)]
-#         else:
-#             return 0.
